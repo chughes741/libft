@@ -1,5 +1,10 @@
 #ifndef HEADER_FILE
-#define HEADER_FILE
+# define HEADER_FILE
+
+# include <stdlib.h>
+# include <limits.h>
+# include <stdio.h>
+# include <unistd.h>
 
 int		ft_atoi(const char *str);
 void	ft_bzero(void *s, size_t n);
