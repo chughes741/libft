@@ -1,3 +1,4 @@
-void	bzero(void *s, int n) // n type needs to be size_t
+void	ft_bzero(void *s, size_t n)
 {
+	return ;
 }

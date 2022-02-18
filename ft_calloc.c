@@ -1,4 +1,4 @@
-void	*ft_calloc(int nitems, int size) // nitems and size are size_t
+void	*ft_calloc(size_t nitems, size_t size)
 {
 	return ;
 }

@@ -1,4 +1,4 @@
-int	strlen(const char *str) // Return type need to be size_t
+size_t	strlen(const char *str)
 {
-	return (0);
+	return ;
 }

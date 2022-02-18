@@ -1,4 +1,4 @@
-int	strlcat(char *dst, const char *src, int size) // size and return are size_t
+size_t	strlcat(char *dst, const char *src, size_t size)
 {
-	return (0);
+	return ;
 }

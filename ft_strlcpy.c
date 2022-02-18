@@ -1,4 +1,4 @@
-void	ft_strlcpy(char *dest, const char *src, int n) // n type is size_t
+void	ft_strlcpy(char *dest, const char *src, size_t n)
 {
-	return;
+	return ;
 }

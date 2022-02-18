@@ -1,4 +1,4 @@
-int	isalnum(int c)
+int	ft_isalnum(int c)
 {
-	return (0);
+	return ;
 }
