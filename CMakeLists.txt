@@ -1,34 +1,24 @@
-# Note: CMake support is community-based. The maintainers do not use CMake
-# internally.
-
 cmake_minimum_required(VERSION 3.5)
 
-if (POLICY CMP0048)
-  cmake_policy(SET CMP0048 NEW)
-endif (POLICY CMP0048)
+set(This libft)
 
-if (POLICY CMP0077)
-  cmake_policy(SET CMP0077 NEW)
-endif (POLICY CMP0077)
+projects(${This} C CXX)
 
-project(googletest-distribution)
-set(GOOGLETEST_VERSION 1.11.0)
-
-if(NOT CYGWIN AND NOT MSYS AND NOT ${CMAKE_SYSTEM_NAME} STREQUAL QNX)
-  set(CMAKE_CXX_EXTENSIONS OFF)
-endif()
+set(CMAKE_C_STANDARD 99)
+set(CMAKE_CXX_STANDARD 11)
 
 enable_testing()
 
-include(CMakeDependentOption)
-include(GNUInstallDirs)
+add_subdirectory(googletest)
 
-#Note that googlemock target already builds googletest
-option(BUILD_GMOCK "Builds the googlemock subproject" ON)
-option(INSTALL_GTEST "Enable installation of googletest. (Projects embedding googletest may want to turn this OFF.)" ON)
+set(Headers
+    libft.h
+)
 
-if(BUILD_GMOCK)
-  add_subdirectory( googlemock )
-else()
-  add_subdirectory( googletest )
-endif()
+set(Sources
+    *.c
+)
+
+add_library(${This} STATIC ${Sources} ${Headers})
+
+add_subdirectory(tests)
