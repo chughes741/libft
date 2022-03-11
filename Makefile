@@ -3,8 +3,8 @@ NAME=libft
 CC=gcc
 FLAGS=-Wall -Werror -Wextra
 DEBUG_FLAGS=-g -fsanitize=address
-SRC=*.c
-LIBS=
+SRC=./sourcefiles/*.c
+LIBS=./headerfiles/*.h
 OBJ=
 RM =rm -rf
 
