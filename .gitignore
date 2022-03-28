@@ -56,3 +56,6 @@ build
 
 # VSC files
 *.vscode
+
+# MacOS files
+.DS_Store
