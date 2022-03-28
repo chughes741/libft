@@ -2,5 +2,6 @@
 
 int	ft_isdigit(int c)
 {
-	return ;
+	(void) c;
+	return 0;
 }

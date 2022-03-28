@@ -2,5 +2,6 @@
 
 int	ft_isascii(int c)
 {
-	return ;
+	(void) c;
+	return 0;
 }

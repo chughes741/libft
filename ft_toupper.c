@@ -2,5 +2,6 @@
 
 int	ft_toupper(int c)
 {
-	return ;
+	(void) c;
+	return 0;
 }

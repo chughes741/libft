@@ -2,5 +2,6 @@
 
 int	ft_atoi(const char *str)
 {
-	return ;
+	(void) *str;
+	return 0;
 }

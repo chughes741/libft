@@ -2,5 +2,6 @@
 
 size_t	ft_strlen(const char *str)
 {
-	return ;
+	(void) *str;
+	return 0;
 }

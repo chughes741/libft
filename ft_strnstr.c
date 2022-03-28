@@ -2,5 +2,8 @@
 
 char	*ft_strnstr(const char *haystack, const char *needle, size_t n)
 {
-	return ;
+	(void) *haystack;
+	(void) *needle;
+	(void) n;
+	return 0;
 }

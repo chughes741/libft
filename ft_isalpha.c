@@ -2,5 +2,6 @@
 
 int	ft_isalpha(int c)
 {
-	return ;
+	(void) c;
+	return 0;
 }

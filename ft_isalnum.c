@@ -2,5 +2,6 @@
 
 int	ft_isalnum(int c)
 {
-	return ;
+	(void) c;
+	return 0;
 }

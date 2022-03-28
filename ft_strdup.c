@@ -2,5 +2,6 @@
 
 char	*ft_strdup(const char *str1)
 {
-	return ;
+	(void) *str1;
+	return 0;
 }
