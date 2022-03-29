@@ -71,13 +71,3 @@ fclean: clean
 
 # Removes objects and executable then remakes all
 re: fclean all
-
-# Compiles the unit tester, runs it, and cleans up
-test: $(OBJS)
-	@$(CC) $(FLAGS) $(SRCS) tests/unittests.c -o testoutput
-	@./testoutput
-	@$(RM) testoutput $(OBJS)
-
-# Runs norminette on all files
-norm: 
-	@norminette -R CheckForbiddenSourceHeader
