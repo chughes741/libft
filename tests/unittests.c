@@ -337,7 +337,7 @@ int	main(){
 	int error_lstadd = 0;
 
 	if (error_lstadd > 0)
-		printf("lstaddfailed %i test(s)\n\n", error_lstadd;
+		printf("lstaddfailed %i test(s)\n\n", error_lstadd);
 	if (error_lstadd = 0)
 		printf("lstadd passed all tests\n\n");
 
