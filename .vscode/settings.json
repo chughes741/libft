@@ -1,0 +1,8 @@
+{
+    "editor.insertSpaces": false,
+    "editor.renderWhitespace": "all",
+    "editor.rulers": [80],
+    "editor.mouseWheelZoom": true,
+    "editor.fontFamily": "Cascadia Code, Fira Code, 'Courier New', monospace",
+    "editor.fontLigatures": true
+}
