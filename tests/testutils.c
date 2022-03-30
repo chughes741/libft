@@ -31,85 +31,80 @@ void set_white() {
 
 
 /*    Test tools       */
-void int_expect_eq(int real_val, int test_val) {
+void int_expect_eq(int *test_num, int real_val, int test_val) {
 	if (real_val == test_val) {
 		set_green();
-		printf("Test passed\n");
+		*test_num += 1;
+		printf("Test %i passed\n", *test_num);
 		return;
 		}
 	set_red();
-	printf("Test failled\n");
+	*test_num += 1;
+	printf("Test %i failled\n", *test_num);
+	return;
 }
 
-void int_expect_neq(int real_val, int test_val) {
+void int_expect_neq(int *test_num, int real_val, int test_val) {
 	if (real_val != test_val) {
 		set_green();
-		printf("Test passed\n");
+		*test_num += 1;
+		printf("Test %i passed\n", *test_num);
 		return;
 		}
 	set_red();
-	printf("Test failled\n");
+	*test_num += 1;
+	printf("Test %i failled\n", *test_num);
+	return;
 }
 
-void char_expect_eq(char real_val, char test_val) {
+void char_expect_eq(int *test_num, char real_val, char test_val) {
 	if (real_val == test_val) {
 		set_green();
-		printf("Test passed\n");
+		*test_num += 1;
+		printf("Test %i passed\n", *test_num);
 		return;
 		}
 	set_red();
-	printf("Test failled\n");
+	*test_num += 1;
+	printf("Test %i failled\n", *test_num);
+	return;
 }
 
-void char_expect_neq(char real_val, char test_val) {
+void char_expect_neq(int *test_num, char real_val, char test_val) {
 	if (real_val != test_val) {
 		set_green();
-		printf("Test passed\n");
+		*test_num += 1;
+		printf("Test %i passed\n", *test_num);
 		return;
 		}
 	set_red();
-	printf("Test failled\n");
+	*test_num += 1;
+	printf("Test %i failled\n", *test_num);
+	return;
 }
 
-void sizet_expect_eq(size_t real_val, size_t test_val) {
+void sizet_expect_eq(int *test_num, size_t real_val, size_t test_val) {
 	if (real_val == test_val) {
 		set_green();
-		printf("Test passed\n");
+		*test_num += 1;
+		printf("Test %i passed\n", *test_num);
 		return;
 		}
 	set_red();
-	printf("Test failled\n");
+	*test_num += 1;
+	printf("Test %i failled\n", *test_num);
+	return;
 }
 
-void sizet_expect_neq(size_t real_val, size_t test_val) {
+void sizet_expect_neq(int *test_num, size_t real_val, size_t test_val) {
 	if (real_val != test_val) {
 		set_green();
-		printf("Test passed\n");
+		*test_num += 1;
+		printf("Test %i passed\n", *test_num);
 		return;
 		}
 	set_red();
-	printf("Test failled\n");
+	*test_num += 1;
+	printf("Test %i failled\n", *test_num);
+	return;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
