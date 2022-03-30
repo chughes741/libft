@@ -18,13 +18,21 @@ int	main() {
 	char str4[32] = "-321535234";
 	int_expect_eq("atoi - valid input 2", atoi(str4), ft_atoi(str4));
 
+
 /*			bzero			*/
-	size_t n1 = 1;
-	void *s1 = "Hello";
-	void *s2 = "Hello";
-	bzero(s1, n1);
-	ft_bzero(s2, n1);
-	void_expect_eq("bzero - 1", s1, s2);
+	size_t n1 = 5;
+	char str5[6] = "Hello";
+	char str6[6] = "Hello";
+	bzero(str5, n1);
+	ft_bzero(str6, n1);
+	int_expect_eq("bzero - 1", 0, memcmp(str5, str6, n1));
+	
+	size_t n2 = 0;
+	char str7[6] = "Hello";
+	char str8[6] = "Hello";
+	bzero(str7, n2);
+	ft_bzero(str8, n2);
+	int_expect_eq("bzero - 2", 0, memcmp(str7, str8, n2));
 
 
 /*			calloc			*/
