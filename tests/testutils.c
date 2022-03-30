@@ -38,7 +38,7 @@ void int_expect_eq(int real_val, int test_val) {
 		return;
 		}
 	set_red();
-	printf("Test failled");
+	printf("Test failled\n");
 }
 
 void int_expect_neq(int real_val, int test_val) {
@@ -48,7 +48,7 @@ void int_expect_neq(int real_val, int test_val) {
 		return;
 		}
 	set_red();
-	printf("Test failled");
+	printf("Test failled\n");
 }
 
 void char_expect_eq(char real_val, char test_val) {
@@ -58,7 +58,7 @@ void char_expect_eq(char real_val, char test_val) {
 		return;
 		}
 	set_red();
-	printf("Test failled");
+	printf("Test failled\n");
 }
 
 void char_expect_neq(char real_val, char test_val) {
@@ -68,7 +68,7 @@ void char_expect_neq(char real_val, char test_val) {
 		return;
 		}
 	set_red();
-	printf("Test failled");
+	printf("Test failled\n");
 }
 
 void sizet_expect_eq(size_t real_val, size_t test_val) {
@@ -78,7 +78,7 @@ void sizet_expect_eq(size_t real_val, size_t test_val) {
 		return;
 		}
 	set_red();
-	printf("Test failled");
+	printf("Test failled\n");
 }
 
 void sizet_expect_neq(size_t real_val, size_t test_val) {
@@ -88,7 +88,7 @@ void sizet_expect_neq(size_t real_val, size_t test_val) {
 		return;
 		}
 	set_red();
-	printf("Test failled");
+	printf("Test failled\n");
 }
 
 
