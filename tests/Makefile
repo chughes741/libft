@@ -6,7 +6,7 @@ SRCS         =  ../*.c
 
 # Compiles the unit tester, runs it, and cleans up
 test: $(SRCS)
-	@$(CC) $(FLAGS) $(SRCS) unittests.c -o testoutput
+	@$(CC) $(FLAGS) $(SRCS) unittests_libft.c -o testoutput
 	@./testoutput
 	@$(RM) testoutput
 
