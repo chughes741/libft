@@ -5,7 +5,7 @@ RM           =  rm -rf
 SRCS         =  ../*.c
 
 # Compiles the unit tester, runs it, and cleans up
-test: $(SRCS)
+test: $(SRCS) clean
 	@$(CC) $(FLAGS) $(SRCS) unittests_libft.c -o testoutput
 	@./testoutput
 	@$(RM) testoutput
