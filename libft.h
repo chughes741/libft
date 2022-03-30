@@ -10,15 +10,14 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-# ifndef HEADER_FILE
-# define HEADER_FILE
+# ifndef LIB_FT
+# define LIB_FT
 
-# include <ctype.h>
+# include <stdlib.h>
 # include <limits.h>
 # include <stdio.h>
-# include <stdlib.h>
-# include <strings.h>
 # include <unistd.h>
+# include <ctype.h>
 
 int		ft_atoi(const char *str);
 void	ft_bzero(void *s, size_t n);
