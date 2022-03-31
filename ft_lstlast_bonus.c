@@ -10,10 +10,10 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "libft_bonus.h"
+#include "libft_bonus.h"
 
 t_list	*ft_lstlast(t_list *lst)
 {
 	(void) *lst;
-	return 0;
+	return (0);
 }

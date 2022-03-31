@@ -15,5 +15,5 @@
 int	ft_isdigit(int c)
 {
 	(void) c;
-	return 0;
+	return (0);
 }

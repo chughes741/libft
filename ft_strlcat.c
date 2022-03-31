@@ -17,5 +17,5 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	(void) *dst;
 	(void) *src;
 	(void) size;
-	return 0;
+	return (0);
 }

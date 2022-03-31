@@ -10,11 +10,11 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "libft_bonus.h"
+#include "libft_bonus.h"
 
 void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
 	(void) *lst;
 	(void) *f;
-	return;
+	return ;
 }
