@@ -14,17 +14,23 @@ TSRCS		=	$(wildcard $(TSRC)/*.c)
 all: $(NAME)
 
 # Compiles the unit tester, runs it, and cleans up
-$(NAME): $(OBJS)
-	@$(CC) $(OBJS) -o $(NAME)
+$(NAME): $(OBJS) $(TOBJS)
+	$(CC) $(OBJS) -o $(NAME)
 
-$(OBJ)/%.o: $(SRC)/%.c $(TSRC)/%.c
-	@$(CC) $(CFLAGS) -c $< -o $@
+$(OBJ)/%.o: $(SRC)/%.c
+	$(CC) $(CFLAGS) -c $< -o $@
+
+$(OBJ)/%.o: src$(TSRC)/%.c
+	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
-	$(RM) $(NAME)
+	@$(RM) $(NAME)
+
+fclean: clean
+	@$(RM) $(OBJS)
 
 # Shows all objects
-dump: clean
+dump:
 	@$(CC) $(FLAGS) $(SRCS) unittests_libft.c -o $(NAME)
 	@objdump -d $(NAME)
 	@$(RM) $(NAME)
