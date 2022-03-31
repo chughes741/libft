@@ -1,31 +1,31 @@
 # include "unittests_libft.h"
 
 /*    Color schemes    */
-void set_default() {
+static void set_default() {
 	printf("\033[0m");
 }
-void set_black() {
+static void set_black() {
 	printf("\033[0;30m");
 }
-void set_red() {
+static void set_red() {
 	printf("\033[0;31m");
 }
-void set_green() {
+static void set_green() {
 	printf("\033[0;32m");
 }
-void set_yellow() {
+static void set_yellow() {
 	printf("\033[0;33m");
 }
-void set_blue() {
+static void set_blue() {
 	printf("\033[0;34m");
 }
-void set_purple() {
+static void set_purple() {
 	printf("\033[0;35m");
 }
-void set_cyan() {
+static void set_cyan() {
 	printf("\033[0;36m");
 }
-void set_white() {
+static void set_white() {
 	printf("\033[0;37m");
 }
 
