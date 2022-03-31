@@ -14,6 +14,7 @@
 
 int	ft_isalnum(int c)
 {
-	(void) c;
+	if (isalpha(c) == 1 || isdigit(c) == 1)
+		return (1);
 	return (0);
 }
