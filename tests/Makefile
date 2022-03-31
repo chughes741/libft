@@ -1,26 +1,27 @@
-NAME		=	testoutput
+NAME		=	test
 
 CC			=	gcc
-FLAGS		=	-Wall -Werror -Wextra
+CFLAGS		=	-Wall -Werror -Wextra
 RM			=	rm -rf
 
-SRC			=	../*.c
-TSRC		=	./src/*.c
+SRC			=	../
+SRCS		=	$(wildcard $(SRC)/*.c)
+OBJ			=	obj
+OBJS		=	$(patsubst $(SRC)/%.c, $(OBJ)/%.o, $(SRCS))
+TSRC		=	src
+TSRCS		=	$(wildcard $(TSRC)/*.c)
 
-OBJ			=	
-
-all: $(OBJ)
-
-$(OBJ): $(SRC) $(TSRC)
+all: $(NAME)
 
 # Compiles the unit tester, runs it, and cleans up
-test: $(SRCS) clean
-	@$(CC) $(FLAGS) $(SRCS) unittests_libft.c -o $(NAME)
-	@./$(NAME)
-	@$(RM) $(NAME)
+$(NAME): $(OBJS)
+	@$(CC) $(OBJS) -o $(NAME)
+
+$(OBJ)/%.o: $(SRC)/%.c $(TSRC)/%.c
+	@$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
-	@$(RM) $(NAME)
+	$(RM) $(NAME)
 
 # Shows all objects
 dump: clean
