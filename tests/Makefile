@@ -29,12 +29,6 @@ clean:
 fclean: clean
 	@$(RM) $(OBJS)
 
-# Shows all objects
-dump:
-	@$(CC) $(FLAGS) $(SRCS) unittests_libft.c -o $(NAME)
-	@objdump -d $(NAME)
-	@$(RM) $(NAME)
-
 # Runs norminette on all files
 norm: 
 	@(cd ../ ; norminette -R CheckForbiddenSourceHeader)
