@@ -1,6 +1,5 @@
-/* ************************************************************************** */
-#include "../testutils.c"
+#include "unittests_libft.h"
 
-int main(int argc, char **argv) {
-	return 0;
+void test_calloc() {
+	return;
 }

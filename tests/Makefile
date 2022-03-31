@@ -1,10 +1,17 @@
-NAME         =  testoutput
+NAME		=	testoutput
 
-CC           =  gcc
-FLAGS        =  -Wall -Werror -Wextra
-RM           =  rm -rf
+CC			=	gcc
+FLAGS		=	-Wall -Werror -Wextra
+RM			=	rm -rf
 
-SRC         =  ../*.c
+SRC			=	../*.c
+TSRC		=	./src/*.c
+
+OBJ			=	
+
+all: $(OBJ)
+
+$(OBJ): $(SRC) $(TSRC)
 
 # Compiles the unit tester, runs it, and cleans up
 test: $(SRCS) clean

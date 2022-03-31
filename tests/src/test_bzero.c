@@ -1,7 +1,7 @@
-#include "../testutils.c"
+#include "unittests_libft.h"
 
 void test_bzero() {
-		size_t n1 = 5;
+	size_t n1 = 5;
 	char str5[6] = "Hello";
 	char str6[6] = "Hello";
 	bzero(str5, n1);

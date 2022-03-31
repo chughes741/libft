@@ -1,6 +1,4 @@
-# include "../libft.h"
-# include "../libft_bonus.h"
-# include "testutils.c"
+# include "unittests_libft.h"
 
 int	main(int argc, char **argv) {
 	if (argc == 1 || argv[2] == "atoi")
