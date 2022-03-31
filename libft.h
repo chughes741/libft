@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HEADER_FILE
-# define HEADER_FILE
+#ifndef LIBFT_H
+# define LIBFT_H
 
 # include <ctype.h>
 # include <limits.h>
