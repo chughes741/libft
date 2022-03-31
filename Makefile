@@ -116,3 +116,7 @@ bonus: $(NAME) $(BOBJS)
 	@$(CC) -c $(CFLAGS) $(BOBJS)
 	@ar -rs $(NAME) $(BOBJS)
 	@make clean
+
+# Remove before submission
+test:
+	@cd ../libft-war-machine/ ; bash grademe.sh
