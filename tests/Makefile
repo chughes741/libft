@@ -1,3 +1,5 @@
+NAME         =  testoutput
+
 CC           =  gcc
 FLAGS        =  -Wall -Werror -Wextra
 RM           =  rm -rf
@@ -6,12 +8,18 @@ SRCS         =  ../*.c
 
 # Compiles the unit tester, runs it, and cleans up
 test: $(SRCS) clean
-	@$(CC) $(FLAGS) $(SRCS) unittests_libft.c -o testoutput
-	@./testoutput
-	@$(RM) testoutput
+	@$(CC) $(FLAGS) $(SRCS) unittests_libft.c -o $(NAME)
+	@./$(NAME)
+	@$(RM) $(NAME)
 
 clean:
-	@$(RM) testoutput
+	@$(RM) $(NAME)
+
+# Shows all objects
+dump: clean
+	@$(CC) $(FLAGS) $(SRCS) unittests_libft.c -o $(NAME)
+	@objdump -d $(NAME)
+	@$(RM) $(NAME)
 
 # Runs norminette on all files
 norm: 
