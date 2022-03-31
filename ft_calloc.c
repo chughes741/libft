@@ -14,7 +14,9 @@
 
 void	*ft_calloc(size_t nitems, size_t size)
 {
-	void *outptr = malloc(nitems * size);
+	void	*outptr;
+
+	outptr = malloc(nitems * size);
 	ft_bzero(outptr, (nitems * size));
-	return outptr;
+	return (outptr);
 }
