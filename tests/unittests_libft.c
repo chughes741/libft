@@ -9,66 +9,123 @@ int	main(int argc, char **argv) {
 	if (argc == 1 || argv[2] == "bzero")
 		test_bzero();
 
-/*			calloc			*/
+	if (argc == 1 || argv[2] == "calloc")
+		test_calloc();
 
-/*			isalnum			*/
-	// Valid inputs
-	int num1 = 48;
-	int_expect_eq("isalnum - VI 1", isalnum(num1), ft_isalnum(num1));
-	int num2 = 122;
-	int_expect_eq("isalnum - VI 2", isalnum(num2), ft_isalnum(num2));
+	if (argc == 1 || argv[2] == "isalnum")
+		test_isalnum();
 
-	// Invalid inputs
-	int num3 = -12;
-	int_expect_eq("isalnum - NVI 1", isalnum(num3), ft_isalnum(num3));
-	int num4 = 200;
-	int_expect_eq("isalnum - NVI 2", isalnum(num4), ft_isalnum(num3));
+	if (argc == 1 || argv[2] == "isalpha")
+		test_isalpha();
 
-/*			isalpha			*/
-	// Valid inputs
-	char str9[32] = "asdgASDASD";
-	int_expect_eq("isalpha - VI 1", isalpha(str9), ft_isalpha(str9));
+	if (argc == 1 || argv[2] == "isascii")
+		test_isascii();
 
-	// Invalid inputs
-	char str10[32] = " asd";
-	int_expect_eq("isalpha - NVI 1", isalpha(str10), ft_isalpha(str10));
+	if (argc == 1 || argv[2] == "isdigit")
+		test_isdigit();
 
-/*			isascii			*/
-/*			isdigit			*/
-	// Valid inputs
-	char str11[32] = "123124";
-	int_expect_eq("isdigit - VI 1", isdigit(str11), ft_isdigit(str11));
+	if (argc == 1 || argv[2] == "isprint")
+		test_isprint();
 
-	// Invalid inputs
-	char str12[32] = "123124a";
-	int_expect_eq("isdigit - NVI 1", isdigit(str12), ft_isdigit(str12));
+	if (argc == 1 || argv[2] == "itoa")
+		test_itoa();
 
-/*			isprint			*/
-/*			itoa			*/
-/*			memchr			*/
-/*			memcmp			*/
-/*			memcpy			*/
-/*			memmove			*/
-/*			memset			*/
-/*			putchar_fd		*/
-/*			putendl_fd		*/
-/*			putnbr_fd		*/
-/*			putstr_fd		*/
-/*			split			*/
-/*			strchr			*/
-/*			strdup			*/
-/*			striteri		*/
-/*			strjoin			*/
-/*			strlcat			*/
-/*			strlcpy			*/
-/*			strlen			*/
-/*			strmapi			*/
-/*			strncmp			*/
-/*			strnstr			*/
-/*			strrchr			*/
-/*			strtrim			*/
-/*			substr			*/
-/*			tolower			*/
-/*			toupper			*/
-/*			Teardown		*/
+	if (argc == 1 || argv[2] == "lstadd_back")
+		test_lstadd_back();
+
+	if (argc == 1 || argv[2] == "lstadd")
+		test_lstadd();
+
+	if (argc == 1 || argv[2] == "lstclear")
+		test_lstclear();
+
+	if (argc == 1 || argv[2] == "lstdelone")
+		test_lstdelone();
+
+	if (argc == 1 || argv[2] == "lstiter")
+		test_lstiter();
+
+	if (argc == 1 || argv[2] == "lstlast")
+		test_lstlast();
+
+	if (argc == 1 || argv[2] == "lstmap")
+		test_lstmap();
+
+	if (argc == 1 || argv[2] == "lstnew")
+		test_lstnew();
+
+	if (argc == 1 || argv[2] == "lstsize")
+		test_lstsize();
+
+	if (argc == 1 || argv[2] == "memchr")
+		test_mrmchr();
+
+	if (argc == 1 || argv[2] == "memcpy")
+		test_memcpy();
+
+	if (argc == 1 || argv[2] == "memmove")
+		test_memmove();
+
+	if (argc == 1 || argv[2] == "memset")
+		test_memset();
+
+	if (argc == 1 || argv[2] == "putchar_fd")
+		test_putchar_fd();
+
+	if (argc == 1 || argv[2] == "putendl_fd")
+		test_putendl_fd();
+
+	if (argc == 1 || argv[2] == "putnbr_fd")
+		test_putnbr_fd();
+
+	if (argc == 1 || argv[2] == "putstr_fd")
+		test_putstr_fd();
+
+	if (argc == 1 || argv[2] == "split")
+		test_split();
+
+	if (argc == 1 || argv[2] == "strchr")
+		test_strchr();
+
+	if (argc == 1 || argv[2] == "strdup")
+		test_strdup();
+
+	if (argc == 1 || argv[2] == "striteri")
+		test_striteri();
+
+	if (argc == 1 || argv[2] == "strjoin")
+		test_strjoin();
+
+	if (argc == 1 || argv[2] == "strlcat")
+		test_strlcat();
+
+	if (argc == 1 || argv[2] == "strlcpy")
+		test_strlcpy();
+
+	if (argc == 1 || argv[2] == "strlen")
+		test_strlen();
+
+	if (argc == 1 || argv[2] == "strmapi")
+		test_strmapi();
+
+	if (argc == 1 || argv[2] == "strncmp")
+		test_strncmp();
+
+	if (argc == 1 || argv[2] == "strnstr")
+		test_strnstr();
+
+	if (argc == 1 || argv[2] == "strrchr")
+		test_strrchr();
+
+	if (argc == 1 || argv[2] == "strtrim")
+		test_strtrim();
+
+	if (argc == 1 || argv[2] == "substr")
+		test_substr();
+
+	if (argc == 1 || argv[2] == "tolower")
+		test_tolower();
+
+	if (argc == 1 || argv[2] == "toupper")
+		test_toupper();
 }

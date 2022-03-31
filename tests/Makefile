@@ -4,7 +4,7 @@ CC           =  gcc
 FLAGS        =  -Wall -Werror -Wextra
 RM           =  rm -rf
 
-SRCS         =  ../*.c
+SRC         =  ../*.c
 
 # Compiles the unit tester, runs it, and cleans up
 test: $(SRCS) clean
