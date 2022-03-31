@@ -2,38 +2,12 @@
 # include "../libft_bonus.h"
 # include "testutils.c"
 
-int	main() {
-/*			Setup			*/
+int	main(int argc, char **argv) {
+	if (argc == 1 || argv[2] == "atoi")
+		test_atoi();
 
-/*			atoi			*/
-	// Valid input
-	char str3[32] = "321535234";
-	int_expect_eq("atoi - VI 1", atoi(str3), ft_atoi(str3));
-	char str4[32] = "-321535234";
-	int_expect_eq("atoi - VI 2", atoi(str4), ft_atoi(str4));
-
-	// Invalid inputs
-	char str1[32] = "aaa123";
-	int_expect_eq("atoi - NVI 1", atoi(str1), ft_atoi(str1));
-	char str2[32] = " 123";
-	int_expect_eq("atoi - NVI 2", atoi(str2), ft_atoi(str2));
-
-
-/*			bzero			*/
-	size_t n1 = 5;
-	char str5[6] = "Hello";
-	char str6[6] = "Hello";
-	bzero(str5, n1);
-	ft_bzero(str6, n1);
-	int_expect_eq("bzero - 1", 0, memcmp(str5, str6, n1));
-	
-	size_t n2 = 0;
-	char str7[6] = "Hello";
-	char str8[6] = "Hello";
-	bzero(str7, n2);
-	ft_bzero(str8, n2);
-	int_expect_eq("bzero - 2", 0, memcmp(str7, str8, n2));
-
+	if (argc == 1 || argv[2] == "bzero")
+		test_bzero();
 
 /*			calloc			*/
 
