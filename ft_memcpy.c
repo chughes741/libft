@@ -14,8 +14,18 @@
 
 void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
-	(void) *dest;
-	(void) *src;
-	(void) n;
-	return (0);
+	size_t	i;
+	char	*str1;
+	char	*str2;
+
+	i = 0;
+	if (dest == NULL || src == NULL)
+		return (NULL);
+	str1 = (char *)dest;
+	str2 = (char *)src;
+	while (i < n) {
+		str1[i] = str2[i];
+		i++;
+	}
+	return (dest);
 }
