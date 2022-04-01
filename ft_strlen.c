@@ -14,6 +14,19 @@
 
 size_t	ft_strlen(const char *str)
 {
-	(void) *str;
-	return (0);
+	int		i;
+	size_t	output;
+	char	*ptr;
+
+	i = 0;
+	if (str == NULL)
+		return 0;
+	ptr = (char *)str;
+	while (*ptr != '\0')
+	{
+		i++;
+		ptr++;
+	}
+	output = (sizeof(char) * i);
+	return (output);
 }
