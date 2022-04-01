@@ -3,6 +3,6 @@
     "editor.renderWhitespace": "all",
     "editor.rulers": [80],
     "editor.mouseWheelZoom": true,
-    "editor.fontFamily": "Cascadia Code, Fira Code, 'Courier New', monospace",
+    "editor.fontFamily": "Fira Code, Cascadia Code, 'Courier New', monospace",
     "editor.fontLigatures": true
 }
