@@ -14,6 +14,7 @@
 
 int	ft_toupper(int c)
 {
-	(void) c;
-	return (0);
+	if (c <= 'z' && c >= 'a')
+		c += (32);
+	return (c);
 }
