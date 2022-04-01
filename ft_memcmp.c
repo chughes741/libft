@@ -20,7 +20,7 @@ int	ft_memcmp(const void *str1, const void *str2, size_t n)
 
 	output = 0;
 	if (str1 == NULL || str2 == NULL)
-		return 0;
+		return (0);
 	ptr1 = (char *)str1;
 	ptr2 = (char *)str2;
 	while (n--)

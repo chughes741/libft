@@ -25,7 +25,7 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	temp = (char *)malloc(sizeof(char) * n);
 	destc = (char *)dest;
 	srcc = (char *)src;
-	while (i < n) 
+	while (i < n)
 	{
 		temp[i] = srcc[i];
 		i++;

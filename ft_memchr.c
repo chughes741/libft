@@ -19,7 +19,7 @@ void	*ft_memchr(const void *str, int c, size_t n)
 	if (str == NULL)
 		return (NULL);
 	sptr = (void *)str;
-	while(n)
+	while (n)
 	{
 		if (*sptr == (char)c)
 			return ((void *)sptr);
