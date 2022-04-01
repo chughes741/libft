@@ -14,8 +14,14 @@
 
 size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
-	(void) *dst;
-	(void) *src;
-	(void) size;
-	return (0);
+	size_t	dstlen;
+	size_t	srclen;
+	char	*dstp;
+
+	dstp = (char *)dst;
+	dstlen = ft_strlen(dst);
+	srclen = ft_strlen(src);
+	dstp += dstlen;
+	ft_memcpy(dstp, src, srclen);
+	return (size);
 }
