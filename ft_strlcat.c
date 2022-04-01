@@ -17,11 +17,13 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	size_t	dstlen;
 	size_t	srclen;
 	char	*dstp;
+	char	*srcp;
 
 	dstp = (char *)dst;
+	srcp = (char *)src;
 	dstlen = ft_strlen(dst);
 	srclen = ft_strlen(src);
 	dstp += dstlen;
-	ft_memcpy(dstp, src, srclen);
-	return (size);
+	ft_memcpy(dstp, srcp, srclen);
+	return ((srclen * sizeof(char)) + size);
 }
