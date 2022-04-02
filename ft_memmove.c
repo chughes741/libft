@@ -15,25 +15,25 @@
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
 	size_t	i;
-	char	*destc;
-	char	*srcc;
+	char	*dstptr;
+	char	*srcptr;
 	char	*temp;
 
 	i = 0;
 	if (dest == NULL || src == NULL)
 		return (NULL);
 	temp = (char *)malloc(sizeof(char) * n);
-	destc = (char *)dest;
-	srcc = (char *)src;
+	dstptr = (char *)dest;
+	srcptr = (char *)src;
 	while (i < n)
 	{
-		temp[i] = srcc[i];
+		temp[i] = srcptr[i];
 		i++;
 	}
 	i = 0;
 	while (i < n)
 	{
-		destc[i] = temp[i];
+		dstptr[i] = temp[i];
 		i++;
 	}
 	free(temp);
