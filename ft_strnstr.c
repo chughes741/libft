@@ -14,8 +14,26 @@
 
 char	*ft_strnstr(const char *haystack, const char *needle, size_t n)
 {
-	(void) *haystack;
-	(void) *needle;
-	(void) n;
-	return (0);
+	char	*hptr;
+	char	*nptr;
+
+	if (needle == NULL)
+		return ((char *)haystack);
+	nptr = (char *)needle;
+	while (haystack && n > 0)
+	{
+		if (*haystack == *needle)
+			break;
+		n--;
+		haystack++;
+	}
+	hptr = (char *)haystack;
+	while (hptr++ && nptr++)
+	{
+		if (hptr != nptr)
+			ft_strnstr(haystack, needle, n);
+	}
+	return (NULL);
 }
+
+// 
