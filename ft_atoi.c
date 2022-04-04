@@ -12,23 +12,6 @@
 
 #include "libft.h"
 
-int	is_neg(const char *str)
-{
-	int	sign;
-	int	index;
-
-	sign = 0;
-	index = 0;
-	while (str[index] != '\0' && (str[index] < '0' || str[index] > '9'))
-	{
-		if (str[index] == '-')
-			sign++;
-		index++;
-	}
-	sign %= 2;
-	return (sign);
-}
-
 int	ft_pow10(int pow)
 {
 	int	result;
@@ -55,25 +38,27 @@ int	ft_atoi(const char *str)
 {
 	int	output;
 	int	i;
-	int	len;
+	int	j;
 
 	i = 0;
-	len = 0;
+	j = 0;
 	output = 0;
-	while (str[len] != '\0' && is_space(str[len]) == 1)
-		len++;
-	while (str[len] != '\0' && (str[len] == '-' || str[len] == '+'))
-		len++;
-	while (str[len] != '\0' && (str[len] >= '0' && str[len] <= '9'))
-		len++;
-	while (len >= 0)
-	{
-		if (str[len] >= '0' && str[len] <= '9')
-			output += (str[len] - 48) * ft_pow10(i - 1);
-		len--;
+	while (str[i] != '\0' && is_space(str[i]) == 1)
 		i++;
+	if (str[i] == '-' || str[i] == '+')
+		i++;
+	while (str[i] != '\0' && str[i] >= '0' && str[i] <= '9')
+		i++;
+	while (i >= 0)
+	{
+		if (ft_isdigit(str[i]))
+			output += (str[i] - 48) * ft_pow10(j - 1);
+		else if (str[i] == '-' && j > 0)
+			return (output * -1);
+		else if (str[i] == '+' && j > 0)
+			return (output);
+		i--;
+		j++;
 	}
-	if (is_neg(str) == 1)
-		output *= -1;
 	return (output);
 }
