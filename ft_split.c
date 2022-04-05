@@ -16,15 +16,15 @@ char	**ft_split(char const *s, char c)
 {
 	int		i;
 	int		j;
-	char	**rtn;
+	// char	**rtn;
 
 	i = 0;
 	j = 0;
 	while(s)
 	{
-		if (s == c)
-			ft_newitem();
+		if ((char)*s == c)
+			//ft_newitem();
 		s++;
 	}
-	return (rtn);
+	return (0);
 }
