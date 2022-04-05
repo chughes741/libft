@@ -46,11 +46,17 @@ char	*ft_itoa(int n)
 
 	len = ft_isize(n) + 1;
 	if (n < 0)
-		len++;
+		len += 1;
 	rtn = malloc(len * sizeof(char));
+	rtn[len -1] = '\0';
+	if (n == -2147483648)
+		return (rtn = "-2147483648");
 	if (n < 0)
+	{
 		rtn[0] = '-';
-	while (n > 9 || n < -9)
+		n *= -1;
+	}
+	while ((n > 9 || n < -9) && len > 1)
 	{
 		rtn[len - 2] = (n % 10) + '0';
 		len--;
