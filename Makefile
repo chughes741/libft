@@ -96,9 +96,13 @@ all: $(NAME) clean
 
 $(NAME): $(OBJS)
 	@ar -crs $(NAME) $(OBJS)
+	@make clean
 
-$(OBJS) : $(SRCS)
+$(OBJS): $(SRCS)
 	@$(CC) -c $(CFLAGS) $(SRCS)
+
+$(BOBJS): $(BSRCS)
+	@$(CC) -c $(CFLAGS) $(BSRCS)
 
 # Removes objects
 clean:
@@ -113,13 +117,12 @@ re: fclean all
 
 # Bonus points 
 bonus: $(NAME) $(BOBJS)
-	@$(CC) -c $(CFLAGS) $(BOBJS)
 	@ar -rs $(NAME) $(BOBJS)
 	@make clean
 
 # Remove before submission
 test:
-	@cd ../libft-war-machine/ ; bash grademe.sh -op2
+	@cd ../libft-war-machine/ ; bash grademe.sh -ob
 
 # op1, op2, ob : only run tests on p1, p2, bonus
 # n : no norm
