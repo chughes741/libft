@@ -14,7 +14,17 @@
 
 char	**ft_split(char const *s, char c)
 {
-	(void) *s;
-	(void) c;
-	return (0);
+	int		i;
+	int		j;
+	char	**rtn;
+
+	i = 0;
+	j = 0;
+	while(s)
+	{
+		if (s == c)
+			ft_newitem();
+		s++;
+	}
+	return (rtn);
 }
