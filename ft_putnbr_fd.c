@@ -15,10 +15,10 @@
 void	ft_putnbr_fd(int n, int fd)
 {
 	char	*c;
-	char	len;
+	size_t	len;
 
 	c = ft_itoa(n);
-	len = ft_strlen(c);
-	write(fd, &c, len);
+	len = ft_strlen(c) * sizeof(char);
+	write(fd, &c[0], len);
 	return ;
 }
