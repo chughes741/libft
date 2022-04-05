@@ -17,7 +17,7 @@ t_list	*ft_lstlast(t_list *lst)
 	t_list	*rtn;
 
 	if (lst->next == NULL)
-		return (rtn = &lst);
+		return (rtn = lst);
 	rtn = ft_lstlast(lst->next);
 	return (rtn);
 }
