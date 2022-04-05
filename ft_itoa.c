@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-int ft_isize (int n)
+int	ft_isize(int n)
 {
 	if (n == -2147483648)
 		return (10);
