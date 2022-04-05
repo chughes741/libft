@@ -14,7 +14,23 @@
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
-	(void) *s1;
-	(void) *s2;
-	return (0);
+	char	*rtn;
+	int		i;
+
+	i = 0;
+	rtn = malloc((ft_strlen(s1) + ft_strlen(s2) + 1) * sizeof(char));
+	while (s1)
+	{
+		rtn[i] = *s1;
+		s1++;
+		i++;
+	}
+	while (s2)
+	{
+		rtn[i] = *s2;
+		s2++;
+		i++;
+	}
+	rtn[i] = '\0';
+	return (rtn);
 }
