@@ -72,24 +72,26 @@ OBJS		=	ft_atoi.o				\
 				ft_substr.o				\
 				ft_tolower.o			\
 				ft_toupper.o
-BSRCS		=	ft_lstadd_back_bonus.c	\
-				ft_lstadd_bonus.c		\
-				ft_lstclear_bonus.c		\
-				ft_lstdelone_bonus.c	\
-				ft_lstiter_bonus.c		\
-				ft_lstlast_bonus.c		\
-				ft_lstmap_bonus.c		\
-				ft_lstnew_bonus.c		\
-				ft_lstsize_bonus.c
-BOBJS		=	ft_lstadd_back_bonus.o	\
-				ft_lstadd_bonus.o		\
-				ft_lstclear_bonus.o		\
-				ft_lstdelone_bonus.o	\
-				ft_lstiter_bonus.o		\
-				ft_lstlast_bonus.o		\
-				ft_lstmap_bonus.o		\
-				ft_lstnew_bonus.o		\
-				ft_lstsize_bonus.o
+BSRCS		=	ft_lstadd_back.c		\
+				ft_lstadd_front.c		\
+				ft_lstadd.c				\
+				ft_lstclear.c			\
+				ft_lstdelone.c			\
+				ft_lstiter.c			\
+				ft_lstlast.c			\
+				ft_lstmap.c				\
+				ft_lstnew.c				\
+				ft_lstsize.c
+BOBJS		=	ft_lstadd_back.o		\
+				ft_lstadd_front.o		\
+				ft_lstadd.o				\
+				ft_lstclear.o			\
+				ft_lstdelone.o			\
+				ft_lstiter.o			\
+				ft_lstlast.o			\
+				ft_lstmap.o				\
+				ft_lstnew.o				\
+				ft_lstsize.o
 
 # Targets
 all: $(NAME) clean
