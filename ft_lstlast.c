@@ -14,6 +14,10 @@
 
 t_list	*ft_lstlast(t_list *lst)
 {
-	(void) *lst;
-	return (0);
+	t_list	*rtn;
+
+	if (lst->next == NULL)
+		return (rtn = &lst);
+	rtn = ft_lstlast(lst->next);
+	return (rtn);
 }
