@@ -17,13 +17,22 @@ char	*ft_strtrim(char const *s1, char const *set)
 	char			*rtn;
 	unsigned int	start;
 	size_t			len;
+	void			*temp;
 
 	start = 0;
-	len = ft_strlen(s1);
-	while (ft_strrchr(set, (int)&s1[start]) != NULL)
+	len = ft_strlen(s1) - 1;
+	temp = ft_strchr(set, (int)s1[start]);
+	while (temp != NULL && start <= len)
+	{
 		start++;
-	while (ft_strrchr(set, (int)&s1[len - 1]) != NULL)
+		temp = ft_strchr(set, (int)s1[start]);
+	}
+	temp = ft_strchr(set, (int)s1[len]);
+	while (temp != NULL && len >= start)
+	{
 		len--;
-	rtn = ft_substr(s1, start, (len - start));
+		temp = ft_strchr(set, (int)s1[len]);
+	}
+	rtn = ft_substr(s1, start, (len - start + 1));
 	return (rtn);
 }
