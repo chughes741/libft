@@ -20,7 +20,7 @@ char	**ft_split(char const *s, char c)
 
 	// i = 0;
 	// j = 0;
-	while(s)
+	while(!s)
 	{
 		if ((char)*s == c)
 			//ft_newitem();
