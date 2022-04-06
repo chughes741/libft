@@ -14,17 +14,23 @@
 
 char	**ft_split(char const *s, char c)
 {
-	// int		i;
-	// int		j;
-	// char	**rtn;
+	char	**rtn;
+	char	*newstr;
+	int		i;
+	int		j;
 
-	// i = 0;
-	// j = 0;
-	while(!s)
+	rtn = ft_calloc(1, sizeof(char *));
+	i = 0;
+	j = 0;
+	while (s[i])
 	{
-		if ((char)*s == c)
-			//ft_newitem();
-		s++;
+		while (s[i] == c)
+			i++;
+		newstr = ft_strtrim(s, &c);
+		rtn[j] = newstr;
+		j++;
+		while (s[i] != c)
+			i++;
 	}
-	return (0);
+	return (rtn);
 }
