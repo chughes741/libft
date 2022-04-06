@@ -14,12 +14,12 @@
 
 char	**ft_split(char const *s, char c)
 {
-	int		i;
-	int		j;
+	// int		i;
+	// int		j;
 	// char	**rtn;
 
-	i = 0;
-	j = 0;
+	// i = 0;
+	// j = 0;
 	while(s)
 	{
 		if ((char)*s == c)
