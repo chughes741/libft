@@ -12,22 +12,6 @@
 
 #include "libft.h"
 
-int	ft_setmatch(char const *c, char const *set)
-{
-	int	i;
-
-	i = 0;
-	if (c == NULL || set == NULL)
-		return (0);
-	while (set[i])
-	{
-		if (set[i] == *c)
-			return (1);
-		i++;
-	}
-	return (0);
-}
-
 char	*ft_strtrim(char const *s1, char const *set)
 {
 	char			*rtn;
@@ -36,9 +20,9 @@ char	*ft_strtrim(char const *s1, char const *set)
 
 	start = 0;
 	len = ft_strlen(s1);
-	while (ft_setmatch(&s1[start], set) == 1)
+	while (ft_strrchr(set, (int)&s1[start]) != NULL)
 		start++;
-	while (ft_setmatch(&s1[len - 1], set) == 1)
+	while (ft_strrchr(set, (int)&s1[len - 1]) != NULL)
 		len--;
 	rtn = ft_substr(s1, start, (len - start));
 	return (rtn);
