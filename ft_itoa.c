@@ -14,8 +14,6 @@
 
 int	ft_isize(int n)
 {
-	if (n == -2147483648)
-		return (10);
 	if (n < 0)
 		n *= -1;
 	if (n < 10)
@@ -44,13 +42,13 @@ char	*ft_itoa(int n)
 	char	*rtn;
 	int		len;
 
+	if (n == -2147483648)
+		return (ft_strdup("-2147483648"));
 	len = ft_isize(n) + 1;
 	if (n < 0)
 		len += 1;
 	rtn = malloc(len * sizeof(char));
-	rtn[len -1] = '\0';
-	if (n == -2147483648)
-		return (rtn = "-2147483648");
+	rtn[len - 1] = '\0';
 	if (n < 0)
 	{
 		rtn[0] = '-';
