@@ -16,8 +16,6 @@ void	*ft_memchr(const void *str, int c, size_t n)
 {
 	char	*sptr;
 
-	if (str == NULL)
-		return (NULL);
 	sptr = (void *)str;
 	while (n)
 	{
