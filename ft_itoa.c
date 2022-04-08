@@ -48,6 +48,8 @@ char	*ft_itoa(int n)
 	if (n < 0)
 		len += 1;
 	rtn = malloc(len * sizeof(char));
+	if (rtn == NULL)
+		return (NULL);
 	rtn[len - 1] = '\0';
 	if (n < 0)
 	{
