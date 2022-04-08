@@ -20,9 +20,9 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	char	*temp;
 
 	i = 0;
-	if (dest == NULL || src == NULL)
+	if (dest == NULL && src == NULL)
 		return (NULL);
-	temp = (char *)malloc(sizeof(char) * n);
+	temp = (char *)ft_calloc(n, sizeof(char));
 	dstptr = (char *)dest;
 	srcptr = (char *)src;
 	while (i < n)
