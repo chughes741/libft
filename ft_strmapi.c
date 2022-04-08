@@ -15,16 +15,20 @@
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
 	unsigned int	i;
-	char			*str;
+	char			*rtn;
 
 	i = 0;
-	str = malloc(ft_strlen(s));
-	if (str == NULL)
+	if (s == NULL)
+		return (ft_strdup(""));
+	if ((*f) == NULL)
+		return (NULL);
+	rtn = ft_strdup(s);
+	if (rtn == NULL)
 		return (NULL);
 	while (s[i])
 	{
-		str[i] = (*f)(i, s[i]);
+		rtn[i] = (*f)(i, s[i]);
 		i++;
 	}
-	return (str);
+	return (rtn);
 }
