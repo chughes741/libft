@@ -31,32 +31,40 @@ size_t	ft_wordcount(char const *s, char c)
 	return (rtn);
 }
 
+char	*ft_nextword(char const *s, char c)
+{
+	size_t	len;
+	char	*rtn;
+
+	len = 0;
+	while (s[len] && s[len] != c)
+		len++;
+	rtn = (char *)calloc(len + 1, sizeof(char));
+	if (rtn == NULL)
+		return (NULL);
+	strlcpy(rtn, s, len);
+	return (rtn);
+}
+
 char	**ft_split(char const *s, char c)
 {
 	char	**rtn;
 	int		i;
 	int		j;
 
-	if (s == NULL)
-		return (NULL);
-	rtn = (char **)ft_calloc(ft_wordcount(s, c) + 1, sizeof(char *));
+	rtn = (char **)calloc(ft_wordcount(s, c) + 1, sizeof(char *));
 	if (rtn == NULL)
 		return (NULL);
 	i = 0;
 	j = 0;
 	while (s[i])
 	{
-		while (s[i] == c && s[i] != '\0')
+		while (s[i] == c)
 			i++;
-		if (s[i] != '\0')
-		{
-			rtn[j] = ft_strtrim(&s[i], &c); // TODO replace strtrim
-			if (rtn[j] == NULL)
-				return (NULL);
-			j++;
-			while (s[i] != c)
-				i++;
-		}
+		rtn[j] = ft_nextword(&s[i], c);
+		j++;
+		while (s[i] != c)
+			i++;
 	}
 	rtn[j] = (void *)0;
 	return (rtn);
