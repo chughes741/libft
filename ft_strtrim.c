@@ -20,9 +20,11 @@ char	*ft_strtrim(char const *s1, char const *set)
 
 	start = 0;
 	len = ft_strlen(s1) - 1;
+	if (s1[0] == '\0')
+		return (ft_strdup(s1));
 	while (ft_strchr(set, (int)s1[start]) != NULL && start <= len)
 		start++;
-	while (ft_strchr(set, (int)s1[len]) != NULL && len >= start)
+	while (ft_strchr(set, (int)s1[len]) != NULL && start <= len)
 		len--;
 	rtn = ft_substr(s1, start, (len - start + 1));
 	return (rtn);
