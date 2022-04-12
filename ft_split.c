@@ -33,22 +33,24 @@ size_t	ft_wordcount(char const *s, char c)
 char	**ft_split(char const *s, char c)
 {
 	char			**rtn;
-	size_t			wordcount;
+	unsigned int	wordcount;
 	unsigned int	start;
-	size_t			end;
+	unsigned int	end;
 
 	wordcount = ft_wordcount(s, c);
 	rtn = (char **)ft_calloc(wordcount + 1, sizeof(char *));
 	if (rtn == NULL)
 		return (NULL);
 	rtn[wordcount] = (void *)0;
+	if (wordcount == 0)
+		return (rtn);
 	start = (unsigned int)ft_strlen(s) - 1;
 	while (s[start] && start > 0)
 	{
-		while (s[start] && s[start] == c)
+		while (s[start] && start > 0 && s[start] == c)
 			start--;
 		end = start + 1;
-		while (s[start] && s[start] != c)
+		while (s[start] && start > 0 && s[start] != c)
 			start--;
 		if (wordcount > 0)
 			wordcount--;
@@ -57,16 +59,4 @@ char	**ft_split(char const *s, char c)
 			break ;
 	}
 	return (rtn);
-}
-
-int main() {
-	char *s1 = "      split       this for   me  !       ";
-	char c = ' ';
-	char **str = ft_split(s1, c);
-	int i = 0;
-
-	while (str[i]) {
-		printf("%s\n", str[i]);
-		i++;}
-	return 0;
 }
