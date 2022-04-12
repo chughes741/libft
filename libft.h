@@ -24,7 +24,7 @@ typedef struct t_list
 {
 	void			*content;
 	struct t_list	*next;
-}	t_list;
+}					t_list;
 
 int		ft_atoi(const char *str);
 void	ft_bzero(void *s, size_t n);
