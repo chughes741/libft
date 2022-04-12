@@ -43,7 +43,6 @@ char	**ft_split(char const *s, char c)
 		return (NULL);
 	rtn[wordcount] = (void *)0;
 	start = (unsigned int)ft_strlen(s) - 1;
-	wordcount -= 1;
 	while (s[start] && start > 0)
 	{
 		while (s[start] && s[start] == c)
@@ -52,16 +51,16 @@ char	**ft_split(char const *s, char c)
 		while (s[start] && s[start] != c)
 			start--;
 		if (wordcount > 0)
-		{
+			wordcount--;
 		rtn[wordcount] = ft_substr(s, start + 1, (end - start));
-		wordcount--;
-		}
+		if (wordcount == 0)
+			break ;
 	}
 	return (rtn);
 }
 
 int main() {
-	char *s1 = "      split       this for   me";
+	char *s1 = "      split       this for   me  !       ";
 	char c = ' ';
 	char **str = ft_split(s1, c);
 	int i = 0;
