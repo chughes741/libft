@@ -17,9 +17,7 @@ t_list	*ft_lstlast(t_list *lst)
 	t_list	*rtn;
 
 	rtn = lst;
-	while (rtn->next != NULL)
-	{
+	while (rtn && rtn->next != NULL)
 		rtn = rtn->next;
-	}
 	return (rtn);
 }
