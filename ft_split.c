@@ -14,75 +14,60 @@
 
 size_t	ft_wordcount(char const *s, char c)
 {
-	size_t	count;
-	size_t	len;
-	size_t	i;
+	int		i;
+	size_t	wordcount;
 
-	count = 0;
-	i = 0;
-	len = ft_strlen(s);
-	while (i < len)
+	i = 1;
+	wordcount = 0;
+	if (s[0] != c && s[0] != '\0')
+		wordcount = 1;
+	while (s[i])
 	{
-		while (s[i] == c)
-			i++;
-		if (s[i] != c && s[i] != '\0')
-			count++;
-		while (s[i] != c)
-			i++;
+		if (s[i - 1] == c && s[i] != c)
+			wordcount++;
+		i++;
 	}
-	return (count);
-}
-
-char	*ft_nextword(char const *s, char c)
-{
-	size_t	len;
-	size_t	slen;
-	char	*rtn;
-
-	len = 0;
-	slen = ft_strlen(s);
-	while (s[len] != c && len < slen)
-		len++;
-	rtn = (char *)calloc(len + 1, sizeof(char));
-	if (rtn == NULL)
-		return (NULL);
-	ft_strlcpy(rtn, s, len + 1);
-	return (rtn);
+	return (wordcount);
 }
 
 char	**ft_split(char const *s, char c)
 {
-	char	**rtn;
-	size_t	len;
-	size_t	i;
-	size_t	j;
+	char			**rtn;
+	size_t			wordcount;
+	unsigned int	start;
+	size_t			end;
 
-	rtn = (char **)calloc(ft_wordcount(s, c) + 1, sizeof(char *));
+	wordcount = ft_wordcount(s, c);
+	rtn = (char **)ft_calloc(wordcount + 1, sizeof(char *));
 	if (rtn == NULL)
 		return (NULL);
-	i = 0;
-	j = 0;
-	len = ft_strlen(s);
-	while (i < len)
+	rtn[wordcount] = (void *)0;
+	start = (unsigned int)ft_strlen(s) - 1;
+	wordcount -= 1;
+	while (s[start] && start > 0)
 	{
-		while (s[i] == c)
-			i++;
-		rtn[j] = ft_nextword(&s[i], c);
-		j++;
-		while (s[i] != c)
-			i++;
+		while (s[start] && s[start] == c)
+			start--;
+		end = start + 1;
+		while (s[start] && s[start] != c)
+			start--;
+		if (wordcount > 0)
+		{
+		rtn[wordcount] = ft_substr(s, start + 1, (end - start));
+		wordcount--;
+		}
 	}
-	rtn[ft_wordcount(s, c) + 1] = (void *)0;
 	return (rtn);
 }
 
 int main() {
-	char *s1 = "..........split.this.....for.me.!............";
-	char c = 's';
-	char **s2 = ft_split(s1, c);
+	char *s1 = "      split       this for   me";
+	char c = ' ';
+	char **str = ft_split(s1, c);
 	int i = 0;
 
-	while (s2[i]) {
-		printf("%s\n", s2[i]);
+	while (str[i]) {
+		printf("%s\n", str[i]);
 		i++;}
+	return 0;
 }
