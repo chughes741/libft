@@ -30,7 +30,6 @@ size_t	ft_wordcount(char const *s, char c)
 		while (s[i] != c)
 			i++;
 	}
-	printf("Word count: %zu\n", count);
 	return (count);
 }
 
@@ -78,8 +77,8 @@ char	**ft_split(char const *s, char c)
 }
 
 int main() {
-	char *s1 = "     split     this for   me  !    ";
-	char c = ' ';
+	char *s1 = "..........split.this.....for.me.!............";
+	char c = 's';
 	char **s2 = ft_split(s1, c);
 	int i = 0;
 
