@@ -14,7 +14,12 @@
 
 void	ft_lstclear(t_list **lst, void (*del)(void*))
 {
-	(void) **lst;
-	(void) *del;
+	t_list	*node;
+
+	node = *lst;
+	if (node->next != NULL)
+		ft_lstclear(&node->next, (*del));
+	ft_lstdelone(node, (*del));
+	*lst = NULL;
 	return ;
 }
