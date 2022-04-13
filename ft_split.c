@@ -45,15 +45,17 @@ char	**ft_split(char const *s, char c)
 	if (wordcount == 0)
 		return (rtn);
 	start = (unsigned int)ft_strlen(s) - 1;
-	while (s[start] && start > 0)
+	while (s[start] && start >= 0)
 	{
 		while (s[start] && start > 0 && s[start] == c)
 			start--;
-		end = start + 1;
+		end = start;
 		while (s[start] && start > 0 && s[start] != c)
 			start--;
 		if (wordcount > 0)
 			wordcount--;
+		if (start == 0)
+			start -= 1;
 		rtn[wordcount] = ft_substr(s, start + 1, (end - start));
 		if (wordcount == 0)
 			break ;
