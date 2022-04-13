@@ -6,17 +6,12 @@
             "command": "/usr/bin/gcc",
             "args": [
                 "-fdiagnostics-color=always",
-                "-Wall",
                 "-g",
+                "-Wall",
                 "-Werror",
                 "-Wextra",
                 "-I.",
                 "${file}",
-                "ft_calloc.c",
-                "ft_strlen.c",
-                "ft_bzero.c",
-                "ft_substr.c",
-                "ft_strlcpy.c",
                 "-o",
                 "${fileDirname}/${fileBasenameNoExtension}"
             ],
