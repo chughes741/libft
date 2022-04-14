@@ -30,6 +30,17 @@ size_t	ft_wordcount(char const *s, char c)
 	return (wordcount);
 }
 
+char	**makestrarray(unsigned int count)
+{
+	char	**rtn;
+
+	rtn = (char **)ft_calloc(count + 1, sizeof(char *));
+	if (rtn == NULL)
+		return (NULL);
+	rtn[count] = (void *)0;
+	return (rtn);
+}
+
 char	**ft_split(char const *s, char c)
 {
 	char			**rtn;
@@ -38,22 +49,18 @@ char	**ft_split(char const *s, char c)
 	unsigned int	end;
 
 	wordcount = ft_wordcount(s, c);
-	rtn = (char **)ft_calloc(wordcount + 1, sizeof(char *));
-	if (rtn == NULL)
-		return (NULL);
-	rtn[wordcount] = (void *)0;
+	rtn = makestrarray(wordcount);
 	if (wordcount == 0)
 		return (rtn);
 	start = (unsigned int)ft_strlen(s) - 1;
-	while (s[start] && start >= 0)
+	while (s[start] && start >= 0 && wordcount >= 0)
 	{
 		while (s[start] && start > 0 && s[start] == c)
 			start--;
 		end = start;
 		while (s[start] && start > 0 && s[start] != c)
 			start--;
-		if (wordcount > 0)
-			wordcount--;
+		wordcount--;
 		if (start == 0)
 			start -= 1;
 		rtn[wordcount] = ft_substr(s, start + 1, (end - start));
