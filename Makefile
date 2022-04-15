@@ -121,11 +121,3 @@ re: fclean all
 bonus: $(NAME) $(BOBJS)
 	@ar -rs $(NAME) $(BOBJS)
 	@make clean
-
-# Remove before submission
-test:
-	@cd ../libft-war-machine/ ; bash grademe.sh
-
-# op1, op2, ob : only run tests on p1, p2, bonus
-# n : no norm
-# f : disable checking for forbidden functions
