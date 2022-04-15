@@ -74,7 +74,6 @@ OBJS		=	ft_atoi.o				\
 				ft_toupper.o
 BSRCS		=	ft_lstadd_back.c		\
 				ft_lstadd_front.c		\
-				ft_lstadd.c				\
 				ft_lstclear.c			\
 				ft_lstdelone.c			\
 				ft_lstiter.c			\
@@ -84,7 +83,6 @@ BSRCS		=	ft_lstadd_back.c		\
 				ft_lstsize.c
 BOBJS		=	ft_lstadd_back.o		\
 				ft_lstadd_front.o		\
-				ft_lstadd.o				\
 				ft_lstclear.o			\
 				ft_lstdelone.o			\
 				ft_lstiter.o			\
