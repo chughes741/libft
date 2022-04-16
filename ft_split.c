@@ -14,11 +14,13 @@
 
 size_t	ft_wordcount(char const *s, char c)
 {
-	int		i;
-	size_t	wordcount;
+	int				i;
+	unsigned long	wordcount;
 
 	i = 1;
 	wordcount = 0;
+	if (*s == '\0')
+		return (wordcount);
 	if (s[0] != c && s[0] != '\0')
 		wordcount = 1;
 	while (s[i])
@@ -50,7 +52,7 @@ char	**ft_split(char const *s, char c)
 
 	wordcount = ft_wordcount(s, c);
 	rtn = makestrarray(wordcount);
-	if (wordcount == 0)
+	if (rtn == NULL || wordcount == 0)
 		return (rtn);
 	start = (unsigned int)ft_strlen(s) - 1;
 	while (s[start] && start >= 0 && wordcount >= 0)
