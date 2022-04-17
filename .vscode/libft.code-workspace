@@ -2,12 +2,6 @@
 	"folders": [
 		{
 			"path": "../"
-		},
-		{
-			"path": "../../libft-war-machine"
-		},
-		{
-			"path": "../../libft-unit-test"
 		}
 	],
 	"settings": {
