@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-size_t	ft_wordcount(char const *s, char c)
+static size_t	ft_wordcount(char const *s, char c)
 {
 	int				i;
 	unsigned long	wordcount;
@@ -32,7 +32,7 @@ size_t	ft_wordcount(char const *s, char c)
 	return (wordcount);
 }
 
-char	**makestrarray(unsigned int count)
+static char	**makestrarray(unsigned int count)
 {
 	char	**rtn;
 

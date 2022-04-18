@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-int	ft_isize(int n)
+static int	ft_isize(int n)
 {
 	if (n < 0)
 		n *= -1;
