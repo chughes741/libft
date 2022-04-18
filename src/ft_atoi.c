@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-int	ft_pow10(int pow)
+static int	ft_pow10(int pow)
 {
 	int	result;
 
@@ -25,7 +25,7 @@ int	ft_pow10(int pow)
 	return (result);
 }
 
-int	is_space(char n)
+static int	is_space(char n)
 {
 	if (n == ' ' || n == '\n' || n == '\t' || n == '\v' || n == '\f' \
 		|| n == '\r')
