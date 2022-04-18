@@ -1,29 +1,24 @@
 NAME	=	libft.a
 
 CC		=	gcc
-CFLAGS	=	-I$(IDIR) -Wall -Werror -Wextra
+CFLAGS	=	-I$(NAME) -Wall -Werror -Wextra
 RM		=	rm -rf
 
-IDIR	=	include
-SDIR	=	src
-ODIR	=	obj
-
-
-SRCS	=	$(wildcard $(SDIR)/*.c)
-OBJS	=	$(patsubst $(SDIR)/%.c, $(ODIR)/%.o, $(SRCS))
+SRCS	=	$(wildcard *.c)
+OBJS	=	$(SRCS:.c=.o)
 
 # Targets
-all: $(NAME)
+all: $(NAME) clean
 
 $(NAME): $(OBJS)
 	@ar -crs $@ $^
 
-$(ODIR)/%.o: $(SDIR)/%.c
-	@$(CC) $(CFLAGS) -c $^ -o $@
+$(OBJS): $(SRCS)
+	@$(CC) $(CFLAGS) -c $^
 
 # Removes objects
 clean:
-	@$(RM) $(ODIR)/*.o
+	@$(RM) $(OBJS)
 
 # Removes objects and executable
 fclean: clean
