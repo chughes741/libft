@@ -1,20 +1,20 @@
 NAME	=	libft.a
 
 CC		=	gcc
-CFLAGS	=	-I$(NAME) -Wall -Werror -Wextra
+CFLAGS	=	-Wall -Werror -Wextra
 RM		=	rm -rf
 
 SRCS	=	$(wildcard *.c)
 OBJS	=	$(SRCS:.c=.o)
 
 # Targets
-all: $(NAME) clean
+all: $(NAME)
 
 $(NAME): $(OBJS)
 	@ar -crs $@ $^
 
-$(OBJS): $(SRCS)
-	@$(CC) $(CFLAGS) -c $^
+.c.o:
+	@$(CC) $(CFLAGS) -c $< -o $(<:.c=.o) 
 
 # Removes objects
 clean:
